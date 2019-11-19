@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity(){
                     }
 
                     R.id.menu_info->{
-                        Toast.makeText(this,"halo cuy", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this,"Ada Toast gan!", Toast.LENGTH_LONG).show()
                          true
                     }
                     else->  false
                 }
             }
 
-            popupMenu.inflate(R.menu.main)
+            popupMenu.inflate(R.menu.main_main)
             try {
                 val fieldMPopup=PopupMenu::class.java.getDeclaredField("mPopup")
                 fieldMPopup.isAccessible=true
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity(){
                     .getDeclaredMethod("setForceShowIcon",Boolean::class.java)
                     .invoke(mPopup,true)
             }catch (e:Exception){
-                Log.e("Main","error Show",e)
+                Log.e("Main","error showing menu icon",e)
             }
             finally {
                 popupMenu.show()
